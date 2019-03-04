@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatExpansionModule, MatCardModule, MatButtonModule, MatToolbarModule, MatProgressSpinnerModule} from '@angular/material';
+import { MatInputModule, MatExpansionModule, MatCardModule, MatButtonModule, MatToolbarModule, MatProgressSpinnerModule, MatPaginatorModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
+    MatPaginatorModule,
     HttpClientModule
   ],
   providers: [PostsService],
