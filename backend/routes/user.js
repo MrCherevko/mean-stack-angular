@@ -50,6 +50,7 @@ router.post('/login', (req, res, next) => {
             );
             res.status(200).json({
                 token,
+                expiresIn: 3600,
                 message: 'successful authenticated'
             })
 
