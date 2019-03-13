@@ -48,7 +48,6 @@ export class AuthService {
           this.authStatusListener.next(true);
           const now = new Date();
           const expirationDate = new Date(now.getTime() + expiresInDuration * 1000);
-          console.log(expirationDate);
           this.saveAuthData(this.token, expirationDate);
           this.router.navigate(['/']);
         }
@@ -57,16 +56,16 @@ export class AuthService {
 
   autoAuthUser() {
     const authInformation = this.getAuthData();
-    if(authInformation){
-      const now = new Date();
-      const expiresIn = authInformation.expirationDate.getTime() - now.getTime();
-      if(expiresIn > 0){
-        this.token = authInformation.token;
-        this.isAuthenticated = true;
-        this.setAuthTimer(expiresIn);
-        this.authStatusListener.next(true);
-      }
+    if(!authInformation) return;
+    const now = new Date();
+    const expiresIn = authInformation.expirationDate.getTime() - now.getTime();
+    if(expiresIn > 0){
+      this.token = authInformation.token;
+      this.isAuthenticated = true;
+      this.setAuthTimer(expiresIn / 1000);
+      this.authStatusListener.next(true);
     }
+
   }
 
   logout(){
