@@ -1,9 +1,8 @@
+import { AngularMaterialModule } from './angular-material.module';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatExpansionModule, MatCardModule, MatButtonModule, MatToolbarModule, MatProgressSpinnerModule, MatPaginatorModule, MatDialogModule} from '@angular/material';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
@@ -31,17 +30,10 @@ import { ErrorComponent } from './error/error.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatProgressSpinnerModule,
-    MatPaginatorModule,
-    HttpClientModule,
-    MatDialogModule
+    HttpClientModule
   ],
   providers: [
     PostsService,
